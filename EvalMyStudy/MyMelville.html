@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="narrative">
+  <meta name="design-style" content="sonnet">
+  <title>Stalking Moby-Dick — A Reader’s Log Across Seventy-Nine Years</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces (Sonnet) */
+      --background: #f5efe0;
+      --surface-container-low: #f8f3e7;
+      --surface-container: #ece3cf;
+      --surface-container-high: #e4d8bf;
+
+      /* Ink */
+      --on-surface: #1f1a17;
+      --on-surface-variant: #4a3f38;
+
+      /* Rules */
+      --outline: #a8843f;
+      --outline-variant: #d8c7a3;
+
+      /* Accents */
+      --primary: #6b1424;
+      --on-primary: #f5efe0;
+      --primary-container: #efe0dc;
+      --on-primary-container: #4a0d18;
+      --secondary: #2f4a3a;
+      --tertiary: #a8843f;
+      --error: #9b2c1f;
+      --on-error: #f5efe0;
+
+      /* Data series */
+      --data-1: #6b1424;
+      --data-2: #2f4a3a;
+      --data-3: #a8843f;
+      --data-4: #3d5a73;
+      --data-context: #b9ad9c;
+
+      /* Fonts */
+      --font-headline: 'Cormorant Garamond', serif;
+      --font-body: 'Crimson Pro', serif;
+      --font-label: 'Cormorant Garamond', serif;
+
+      /* Shape */
+      --rounded: 0;
+      --rounded-lg: 0;
+      --rounded-full: 9999px;
+
+      /* Style effects */
+      --gilt-rule: 1px solid var(--outline);
+      --gilt-frame-inset: 5px;
+      --paper-vignette: inset 0 0 90px rgb(120 90 40 / 0.16);
+
+      /* Shared semantic & focus tokens */
+      --positive: #2f4a3a;
+      --warning: #8a5a19;
+      --focus: #6b1424;
+
+      /* Narrative type scale (stepped slightly for Cormorant Garamond's small x-height) */
+      --display-size: clamp(2.85rem, 1.7rem + 4.4vw, 5rem);
+      --headline-size: clamp(1.95rem, 1.3rem + 2.2vw, 2.85rem);
+      --subhead-size: clamp(1.3rem, 1.12rem + 0.6vw, 1.6rem);
+      --body-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem);
+      --label-size: clamp(0.75rem, 0.72rem + 0.15vw, 0.85rem);
+
+      /* Spacing scale (4pt base) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: clip; margin: 0; padding: 0; }
+    header { position: static !important; }
+
+    body {
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      font-weight: 400;
+      line-height: 1.7;
+      font-variant-numeric: oldstyle-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      box-shadow: var(--paper-vignette);
+      min-height: 100vh;
+      padding-block: var(--space-xl) var(--space-3xl);
+    }
+
+    .page-grid {
+      display: grid;
+      gap: var(--space-2xl);
+      padding-inline: var(--space-lg);
+      max-width: 980px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .page-grid * { min-width: 0; }
+
+    /* Focus rings */
+    :focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    /* Typography & Labels */
+    .label-voice {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-style: normal;
+      font-size: var(--label-size);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--primary);
+      line-height: 1.3;
+    }
+
+    .label-muted {
+      color: var(--on-surface-variant);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-headline);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--on-surface);
+      margin: 0;
+    }
+
+    h1 {
+      font-size: var(--display-size);
+      line-height: 1.06;
+      letter-spacing: -0.005em;
+    }
+
+    h2 {
+      font-size: var(--headline-size);
+      line-height: 1.15;
+      letter-spacing: -0.004em;
+    }
+
+    h3 {
+      font-size: var(--subhead-size);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0;
+      max-width: 65ch;
+    }
+
+    .measure {
+      max-width: 64ch;
+      margin-inline: auto;
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    /* Sonnet Defining Treatments */
+    .gilt-frame {
+      border: var(--gilt-rule);
+      outline: var(--gilt-rule);
+      outline-offset: calc(-1 * var(--gilt-frame-inset));
+      padding: var(--space-2xl) var(--space-xl);
+      text-align: center;
+      display: grid;
+      gap: var(--space-md);
+      justify-items: center;
+      background-color: var(--surface-container-low);
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-style: normal;
+      font-size: 3.6em;
+      line-height: 0.85;
+      padding: 0.06em 0.1em 0 0;
+      color: var(--primary);
+    }
+
+    .ruled {
+      border-block: var(--gilt-rule);
+      padding-block: var(--space-md);
+    }
+
+    .section-header {
+      text-align: center;
+      display: grid;
+      gap: var(--space-sm);
+      justify-items: center;
+      padding-bottom: var(--space-md);
+      border-bottom: 1px solid var(--outline-variant);
+      max-width: 64ch;
+      margin-inline: auto;
+      width: 100%;
+    }
+
+    .verse {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-size: 1.25em;
+      line-height: 1.5;
+      color: var(--secondary);
+      border-left: var(--gilt-rule);
+      padding-left: var(--space-md);
+      margin-block: var(--space-sm);
+      max-width: 42ch;
+    }
+
+    /* Navigation / Contents strip */
+    .contents-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-sm) var(--space-md);
+      padding-block: var(--space-sm);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+
+    .nav-link {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: var(--label-size);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--primary);
+      background: transparent;
+      border: none;
+      padding: var(--space-sm) var(--space-xs);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-color: var(--outline);
+      text-underline-offset: 4px;
+      transition: color var(--dur-micro) var(--ease-in-out);
+    }
+
+    .nav-link:hover {
+      color: var(--on-primary-container);
+    }
+
+    .middot {
+      color: var(--on-surface-variant);
+      user-select: none;
+    }
+
+    /* Title Header & Key Figures */
+    .title-accent {
+      color: var(--primary);
+    }
+
+    .title-lede {
+      font-family: var(--font-body);
+      font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.35rem);
+      color: var(--on-surface-variant);
+      max-width: 52ch;
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    .figures-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr));
+      gap: var(--space-lg);
+      text-align: center;
+      border-block: var(--gilt-rule);
+      padding-block: var(--space-lg);
+    }
+
+    .figure-item {
+      display: grid;
+      gap: var(--space-xs);
+      justify-items: center;
+      align-content: start;
+    }
+
+    .figure-value {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(2rem, 1.6rem + 1.4vw, 2.75rem);
+      line-height: 1.05;
+      color: var(--on-surface);
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    .figure-caption {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--on-surface-variant);
+      line-height: 1.35;
+      max-width: 22ch;
+    }
+
+    /* Buttons */
+    .btn {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: var(--label-size);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-lg);
+      min-height: 44px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      transition: background-color var(--dur-short) var(--ease-in-out),
+                  color var(--dur-short) var(--ease-in-out);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--on-primary-container);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary[aria-pressed="true"] {
+      background-color: var(--primary);
+      color: var(--on-primary);
+    }
+
+    .btn-subtle {
+      background-color: transparent;
+      color: var(--on-surface-variant);
+      border: 1px solid var(--outline-variant);
+    }
+
+    .btn-subtle:hover {
+      background-color: var(--surface-container);
+      color: var(--on-surface);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--space-xs) var(--space-md);
+      border: 1px solid var(--secondary);
+      border-radius: var(--rounded-full);
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--secondary);
+      line-height: 1.2;
+    }
+
+    .tag-oxblood {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Sections */
+    .narrative-section {
+      display: grid;
+      gap: var(--space-xl);
+    }
+
+    /* Interactive Stage Explorer (Section I) */
+    .stage-panel {
+      border-block: var(--gilt-rule);
+      padding-block: var(--space-xl);
+      display: grid;
+      gap: var(--space-xl);
+      container-type: inline-size;
+    }
+
+    .stage-layout {
+      display: grid;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    @container (min-width: 680px) {
+      .stage-layout {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      }
+    }
+
+    .stage-detail {
+      display: grid;
+      gap: var(--space-md);
+      align-content: start;
+    }
+
+    .stage-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm) var(--space-md);
+    }
+
+    .stage-facts {
+      display: grid;
+      gap: var(--space-sm);
+      border-top: 1px solid var(--outline-variant);
+      padding-top: var(--space-md);
+    }
+
+    .stage-fact-row {
+      display: grid;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      gap: var(--space-sm);
+      align-items: baseline;
+    }
+
+    .stage-chart-box {
+      display: grid;
+      gap: var(--space-sm);
+      background-color: var(--surface-container-low);
+      padding: var(--space-lg);
+      border-top: var(--gilt-rule);
+      border-bottom: var(--gilt-rule);
+    }
+
+    .chart-title {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--on-surface);
+      border-bottom: 1px solid var(--outline-variant);
+      padding-bottom: var(--space-xs);
+    }
+
+    .svg-wrap {
+      width: 100%;
+      min-height: 220px;
+      display: block;
+    }
+
+    /* Lexicon & Translator (Section II) */
+    .lexicon-shell {
+      display: grid;
+      gap: var(--space-lg);
+      container-type: inline-size;
+    }
+
+    .lexicon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: var(--space-lg);
+    }
+
+    .lexicon-entry {
+      border-top: var(--gilt-rule);
+      border-bottom: 1px solid var(--outline-variant);
+      padding-block: var(--space-md);
+      display: grid;
+      gap: var(--space-xs);
+      align-content: start;
+    }
+
+    .lexicon-term {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.45rem;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .translator-panel {
+      background-color: var(--surface-container-low);
+      border-block: var(--gilt-rule);
+      padding: var(--space-lg);
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .translator-grid {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    @container (min-width: 640px) {
+      .translator-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+
+    .translator-col {
+      display: grid;
+      gap: var(--space-xs);
+      align-content: start;
+      padding-left: var(--space-md);
+      border-left: 1px solid var(--outline-variant);
+    }
+
+    /* Monkey-Rope Schematic (Section III) */
+    .rope-explorer {
+      border-block: var(--gilt-rule);
+      padding-block: var(--space-xl);
+      display: grid;
+      gap: var(--space-xl);
+      container-type: inline-size;
+    }
+
+    .rope-layout {
+      display: grid;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    @container (min-width: 680px) {
+      .rope-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+
+    .rope-svg-panel {
+      background-color: var(--surface-container-low);
+      border-block: 1px solid var(--outline-variant);
+      padding: var(--space-md);
+      min-height: 290px;
+      display: grid;
+      place-items: center;
+    }
+
+    .rope-narrative {
+      display: grid;
+      gap: var(--space-md);
+      align-content: start;
+    }
+
+    /* Comparison Table (Sonnet style: no vertical lines) */
+    .table-wrap {
+      overflow-x: auto;
+      width: 100%;
+    }
+
+    table.sonnet-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    .sonnet-table thead th {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: var(--label-size);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--primary);
+      border-bottom: var(--gilt-rule);
+      padding: var(--space-sm) var(--space-md) var(--space-sm) 0;
+    }
+
+    .sonnet-table tbody td {
+      padding: var(--space-md) var(--space-md) var(--space-md) 0;
+      border-bottom: 1px solid var(--outline-variant);
+      vertical-align: top;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .sonnet-table tbody td:first-child {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--on-surface);
+      white-space: nowrap;
+    }
+
+    /* Margin Notebook Form (Section IV) */
+    .notebook-panel {
+      background-color: var(--surface-container);
+      border-block: var(--gilt-rule);
+      padding: var(--space-xl);
+      display: grid;
+      gap: var(--space-lg);
+      max-width: 68ch;
+      margin-inline: auto;
+      width: 100%;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: var(--space-lg);
+      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+      align-items: end;
+    }
+
+    .field-group {
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .field-label {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: var(--label-size);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--primary);
+    }
+
+    .sonnet-select,
+    .sonnet-textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--on-surface);
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid var(--on-surface);
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md) var(--space-sm) 0;
+      min-height: 44px;
+      transition: border-color var(--dur-micro) var(--ease-in-out);
+    }
+
+    .sonnet-select {
+      padding-right: var(--space-xl);
+      cursor: pointer;
+    }
+
+    .sonnet-textarea {
+      min-height: 84px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .sonnet-select:focus,
+    .sonnet-textarea:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      border-bottom-color: var(--primary);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+
+    .status-note {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--secondary);
+      min-height: 1.4em;
+    }
+
+    .status-note.is-error {
+      color: var(--error);
+    }
+
+    .saved-entries {
+      display: grid;
+      gap: var(--space-md);
+      border-top: 1px solid var(--outline-variant);
+      padding-top: var(--space-md);
+    }
+
+    .saved-entry {
+      border-left: var(--gilt-rule);
+      padding-left: var(--space-md);
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .saved-entry-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .empty-state {
+      font-style: italic;
+      color: var(--on-surface-variant);
+      padding-block: var(--space-sm);
+    }
+
+    /* Colophon / Sources */
+    .colophon {
+      border-top: var(--gilt-rule);
+      padding-top: var(--space-lg);
+      text-align: center;
+      display: grid;
+      gap: var(--space-sm);
+      justify-items: center;
+      color: var(--on-surface-variant);
+      font-size: 0.95rem;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity var(--dur-long) var(--ease-out),
+                  transform var(--dur-long) var(--ease-out);
+    }
+
+    .reveal.is-pending {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding-block: var(--space-md) var(--space-2xl);
+      }
+      .page-grid {
+        padding-inline: var(--space-md);
+        gap: var(--space-xl);
+      }
+      .gilt-frame {
+        padding: var(--space-lg) var(--space-md);
+      }
+      .stage-fact-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-xs);
+      }
+      .notebook-panel {
+        padding: var(--space-lg) var(--space-md);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="page-grid">
+
+      <!-- Title Page (Gilt Double Frame — once per view) -->
+      <header class="gilt-frame">
+        <span class="label-voice">A Reader’s Log · Three Brushes with the White Whale</span>
+        <h1>Stalking <span class="title-accent">Moby-Dick</span></h1>
+        <p class="title-lede">
+          How an unread 206,000-word college nemesis followed one reader from a library window into his thirties, yielded at last to AirPods at seventy-nine—and revealed Melville’s chilling truth about human dependence.
+        </p>
+        <nav class="contents-nav" aria-label="Essay sections">
+          <button type="button" class="nav-link" onclick="scrollToSection('sec-hunt')">I. The Long Hunt</button>
+          <span class="middot" aria-hidden="true">·</span>
+          <button type="button" class="nav-link" onclick="scrollToSection('sec-brine')">II. Brine &amp; Blubber</button>
+          <span class="middot" aria-hidden="true">·</span>
+          <button type="button" class="nav-link" onclick="scrollToSection('sec-rope')">III. The Monkey-Rope</button>
+          <span class="middot" aria-hidden="true">·</span>
+          <button type="button" class="nav-link" onclick="scrollToSection('sec-margin')">IV. Margin Notes</button>
+        </nav>
+      </header>
+
+      <!-- Opening Key Figures -->
+      <section aria-label="Book and voyage figures">
+        <div class="figures-strip">
+          <div class="figure-item">
+            <span class="label-voice">The Epic</span>
+            <span class="figure-value">206,000+</span>
+            <span class="figure-caption">Words across 135 chapters, prologue &amp; epilogue (1851)</span>
+          </div>
+          <div class="figure-item">
+            <span class="label-voice">Search Claim</span>
+            <span class="figure-value">15–20 hrs</span>
+            <span class="figure-caption">Online estimate—a “clear lie” to an undergraduate</span>
+          </div>
+          <div class="figure-item">
+            <span class="label-voice">Audio Reality</span>
+            <span class="figure-value">23 hrs</span>
+            <span class="figure-caption">Full unhurried recording heard over one week at 79</span>
+          </div>
+          <div class="figure-item">
+            <span class="label-voice">The Reckoning</span>
+            <span class="figure-value">3 Brushes</span>
+            <span class="figure-caption">College library · Thirties notes · AirPods armchair</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section I: The Long Hunt -->
+      <section id="sec-hunt" class="narrative-section reveal">
+        <div class="section-header">
+          <span class="label-voice">Part I · Three Encounters Across a Lifetime</span>
+          <h2>Ahab Died in the Process; the Reader Outlasted the Book</h2>
+        </div>
+
+        <div class="measure">
+          <p class="drop-cap">
+            I stalked <em>Moby-Dick</em>, the book, like Ahab stalked the White Whale. The difference is that Ahab died in the process, and I feel, as I write this, still alive. At the end of the book, Moby-Dick continued to roam the seas.
+          </p>
+          <p>
+            Google Search coaches a reader that Herman Melville’s 1851 epic can be finished in “15 to 20 hours,” or “about 2 to 3 weeks, if you read an hour a day.” In practice, signing on for <em>Moby-Dick</em> felt less like reading a novel than shipping out on an ocean voyage stuck in the Strait of Hormuz during war. It took three separate seasons of life—and three entirely different reading mediums—before the book finally opened.
+          </p>
+        </div>
+
+        <!-- Interactive Stage Explorer -->
+        <div class="stage-panel" aria-labelledby="stage-explorer-heading">
+          <div style="text-align: center; display: grid; gap: var(--space-sm); justify-items: center;">
+            <span class="label-voice" id="stage-explorer-heading">Interactive Voyage Log · Select a Reading Stage</span>
+            <div class="btn-row" role="group" aria-label="Reading attempts">
+              <button type="button" class="btn btn-secondary" id="stage-btn-0" aria-pressed="true" onclick="selectStage(0)">I. Freshman Year (4 Days)</button>
+              <button type="button" class="btn btn-secondary" id="stage-btn-1" aria-pressed="false" onclick="selectStage(1)">II. Thirties (Months)</button>
+              <button type="button" class="btn btn-secondary" id="stage-btn-2" aria-pressed="false" onclick="selectStage(2)">III. Age 79 (23 Hours)</button>
+            </div>
+          </div>
+
+          <div class="stage-layout">
+            <div class="stage-detail" id="stage-detail-content">
+              <!-- Populated by JS -->
+            </div>
+
+            <div class="stage-chart-box">
+              <div class="chart-title">Pace &amp; Absorption Across the Three Brushes</div>
+              <svg id="stage-svg" class="svg-wrap" viewBox="0 0 420 230" role="img" aria-label="Chart comparing reading momentum across Freshman year, Thirties, and Age 79">
+                <!-- Populated by JS -->
+              </svg>
+              <p style="font-size: 0.9rem; font-style: italic; color: var(--on-surface-variant);">
+                Select each attempt above to trace how shifting from library duty to episodic fatherhood notes—and finally to spoken poetry—changed the voyage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section II: Brine & Blubber -->
+      <section id="sec-brine" class="narrative-section reveal">
+        <div class="section-header">
+          <span class="label-voice">Part II · What Bogs the Reader Down</span>
+          <h2>Sodden Sailors, Whale Brains, and the Minutiae of 135 Chapters</h2>
+        </div>
+
+        <div class="measure">
+          <p class="drop-cap">
+            When I was a first-year undergraduate, <em>Moby-Dick</em> bogged me down with its nautical and whaling terms. At times, the plot drifted so slowly through the eddies of Melville’s sprawling prose that I felt trapped in a skid-row bar listening to a sodden old sailor gibble-gabble about the sacred lore of knot-tying, the ravages of scurvy, the benefits of owning a good pair of boots, scrimshawing, or the symptoms of gonorrhea. Once you are in, you can’t get out.
+          </p>
+          <p>
+            High school had drilled us to mine <em>Silas Marner</em>, <em>The Scarlet Letter</em>, and <em>Lord of the Flies</em> for “complex themes,” “dense, layered metaphors,” and hidden biblical allusions—all jibber-jabber to a teen brain sorting books before the lunch bell. On top of that, Melville refuses directness and turns encyclopedic whenever a whale crosses his path.
+          </p>
+        </div>
+
+        <!-- Interactive Lexicon & Chapter Filter -->
+        <div class="lexicon-shell">
+          <div style="text-align: center; display: grid; gap: var(--space-sm); justify-items: center;">
+            <span class="label-voice">Whaling Lexicon &amp; Detours · Filter by Obstacle</span>
+            <div class="btn-row" role="group" aria-label="Filter lexicon obstacles">
+              <button type="button" class="btn btn-secondary" id="lex-btn-all" aria-pressed="true" onclick="filterLexicon('all')">All Obstacles (8)</button>
+              <button type="button" class="btn btn-secondary" id="lex-btn-nautical" aria-pressed="false" onclick="filterLexicon('nautical')">Ship Directions</button>
+              <button type="button" class="btn btn-secondary" id="lex-btn-butchering" aria-pressed="false" onclick="filterLexicon('butchering')">Whale Butchering</button>
+              <button type="button" class="btn btn-secondary" id="lex-btn-chapters" aria-pressed="false" onclick="filterLexicon('chapters')">Anatomy &amp; Detours</button>
+            </div>
+          </div>
+
+          <div class="lexicon-grid" id="lexicon-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Melville vs. Undergraduate Translator -->
+        <div class="translator-panel">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-md);">
+            <div>
+              <span class="label-voice">Ornate Prose vs. Plain Speech</span>
+              <h3 style="margin-top: var(--space-xs);">How Melville Writes vs. What the Freshman Heard</h3>
+            </div>
+            <div class="btn-row">
+              <button type="button" class="btn btn-secondary" id="trans-btn-0" aria-pressed="true" onclick="selectPassage(0)">Ch. 1 · Ishmael’s Spleen</button>
+              <button type="button" class="btn btn-secondary" id="trans-btn-1" aria-pressed="false" onclick="selectPassage(1)">Ch. 80 · Skull Phrenology</button>
+              <button type="button" class="btn btn-secondary" id="trans-btn-2" aria-pressed="false" onclick="selectPassage(2)">Google vs. Reality</button>
+            </div>
+          </div>
+          <div class="translator-grid" id="translator-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section III: The Monkey-Rope Philosophy -->
+      <section id="sec-rope" class="narrative-section reveal">
+        <div class="section-header">
+          <span class="label-voice">Part III · Beneath the Salt Spray</span>
+          <h2>Your Well-Being Is Not Your Own—It Is a Monkey-Rope</h2>
+        </div>
+
+        <div class="measure">
+          <p class="drop-cap">
+            Herman Melville is often misremembered as a sea-adventurer who wrote about whales and sailors. Strip away the brine and the blubber, however, and you find a philosopher obsessed with one terrifying truth: your well-being is never your own. It is loaned to you by strangers, held in precarious trust, and can be recalled without warning.
+          </p>
+          <p>
+            For Melville, interdependence is not the warm embrace of human solidarity—it is a monkey-rope, binding us to people we barely understand in a world that offers no guarantee of rescue. Without that tether, we are “isolatoes,” isolated fragments floating in an indifferent void. Yet with it, a stranger’s slip or a captain’s madness can drag the entire deck beneath the Pacific.
+          </p>
+        </div>
+
+        <!-- Interactive Monkey-Rope Schematic & Episode Stepper -->
+        <div class="rope-explorer" aria-labelledby="rope-explorer-heading">
+          <div style="text-align: center; display: grid; gap: var(--space-sm); justify-items: center;">
+            <span class="label-voice" id="rope-explorer-heading">Interactive Schematic · Four Episodes of Fatal Dependence</span>
+            <div class="btn-row" role="group" aria-label="Melville dependence episodes">
+              <button type="button" class="btn btn-secondary" id="rope-btn-0" aria-pressed="true" onclick="selectRopeBeat(0)">1. The Monkey-Rope</button>
+              <button type="button" class="btn btn-secondary" id="rope-btn-1" aria-pressed="false" onclick="selectRopeBeat(1)">2. The Pequod’s Hell</button>
+              <button type="button" class="btn btn-secondary" id="rope-btn-2" aria-pressed="false" onclick="selectRopeBeat(2)">3. Rescue at Sea</button>
+              <button type="button" class="btn btn-secondary" id="rope-btn-3" aria-pressed="false" onclick="selectRopeBeat(3)">4. Queequeg’s Coffin</button>
+            </div>
+          </div>
+
+          <div class="rope-layout">
+            <div class="rope-svg-panel">
+              <svg id="rope-svg" width="100%" viewBox="0 0 420 270" style="min-height: 250px;" role="img" aria-label="Book-plate diagram showing the Pequod's web of dependence">
+                <!-- Populated by JS -->
+              </svg>
+            </div>
+            <div class="rope-narrative" id="rope-narrative">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="measure">
+          <h3>The Illusion of Self-Sufficiency vs. Life Aboard the Pequod</h3>
+          <div class="table-wrap">
+            <table class="sonnet-table">
+              <thead>
+                <tr>
+                  <th scope="col">Dimension</th>
+                  <th scope="col">What We Like to Believe</th>
+                  <th scope="col">What Melville Shows</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Survival</td>
+                  <td>Self-sufficient individuals steering their own fate.</td>
+                  <td>Sweaty, involuntary mutual hostage-taking—one hand’s tremor drags both men down.</td>
+                </tr>
+                <tr>
+                  <td>Society &amp; Pay</td>
+                  <td>Shared work and wages elevate a diverse crew into care.</td>
+                  <td>A “democratic” hell where dependence delivers every sailor to one deranged spider’s madness.</td>
+                </tr>
+                <tr>
+                  <td>Altruism</td>
+                  <td>Laws, contracts, and moral philosophy protect us.</td>
+                  <td>Rescue arrives via irrational, instinctive “mystical vibration” from someone who owes you nothing.</td>
+                </tr>
+                <tr>
+                  <td>Final Outcome</td>
+                  <td>Mutual bonds guarantee safety in the end.</td>
+                  <td>Dependence offers only the possibility of salvation—Ishmael floats on a coffin while all others drown.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section IV: Margin Notes & Verdict -->
+      <section id="sec-margin" class="narrative-section reveal">
+        <div class="section-header">
+          <span class="label-voice">Part IV · The Closet Folder &amp; Your Verdict</span>
+          <h2>The Tragedy and the Miracle Are the Same</h2>
+        </div>
+
+        <div class="measure">
+          <p class="drop-cap">
+            In my thirties, reading a thick annotated edition in fits and starts between fatherhood and teaching, I scribbled notes into a folder that sat hidden in a closet for decades—my mother’s warnings about bad penmanship proved right when I finally unfolded them. By seventy-nine, listening to twenty-three hours of prose through AirPods, I no longer needed to hunt down footnotes or conquer a vocabulary quiz. I just listened to the music of a voice that asks us to tremble before how completely we belong to one another.
+          </p>
+          <blockquote class="verse">
+            “Your well-being is not your own—it’s loaned to you by others, and they can recall that loan at any moment. That’s what makes life both precious and petrifying.”
+          </blockquote>
+        </div>
+
+        <!-- Interactive Margin Notebook (Persisted via notebookAppApi) -->
+        <div class="notebook-panel" aria-labelledby="notebook-heading">
+          <div style="text-align: center; display: grid; gap: var(--space-xs); justify-items: center;">
+            <span class="label-voice" id="notebook-heading">Reader’s Margin Ledger · Saved to This Notebook</span>
+            <h3>Where Are You in Your Hunt—and How Do You Read Melville?</h3>
+            <p style="font-size: 1rem; color: var(--on-surface-variant);">
+              Record your current stage, weigh in on whether Melville’s monkey-rope is cynical or clear-eyed, and leave a margin note for your future self.
+            </p>
+          </div>
+
+          <form id="margin-form" onsubmit="saveMarginNote(event)">
+            <div class="form-grid">
+              <div class="field-group">
+                <label class="field-label" for="input-stage">Your Stage with Moby-Dick</label>
+                <select class="sonnet-select" id="input-stage" name="stage">
+                  <option value="Stalled at the opening chapters">Stalled at the opening chapters</option>
+                  <option value="Bogged down in Cetology &amp; whaling lore">Bogged down in Cetology &amp; whaling lore</option>
+                  <option value="Reading episodically with pencil &amp; notes">Reading episodically with pencil &amp; notes</option>
+                  <option value="Listening straight through on audio">Listening straight through on audio</option>
+                  <option value="Finished the voyage, still haunted by it">Finished the voyage, still haunted by it</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="input-verdict">Verdict on Melville’s View</label>
+                <select class="sonnet-select" id="input-verdict" name="verdict">
+                  <option value="Honestly clear-eyed">Honestly clear-eyed</option>
+                  <option value="Bleakly cynical">Bleakly cynical</option>
+                  <option value="Both tragedy and miracle at once">Both tragedy and miracle at once</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-group" style="margin-top: var(--space-lg);">
+              <label class="field-label" for="input-note">Your Margin Note</label>
+              <textarea class="sonnet-textarea" id="input-note" name="note" rows="3" placeholder="Write a thought on a chapter, a line that stayed with you, or why you paused…"></textarea>
+            </div>
+
+            <div class="form-actions" style="margin-top: var(--space-lg);">
+              <div class="btn-row" style="justify-content: flex-start;">
+                <button type="submit" class="btn btn-primary" id="btn-save-note">Inscribe Margin Note</button>
+                <button type="button" class="btn btn-subtle" id="btn-reset-notes" onclick="resetMarginNotes(this)">Clear Ledger</button>
+              </div>
+              <span class="status-note" id="form-status" role="status" aria-live="polite"></span>
+            </div>
+          </form>
+
+          <div class="saved-entries" id="saved-entries-container">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Colophon / Source Attribution -->
+      <footer class="colophon">
+        <span class="label-voice label-muted">Sources &amp; Colophon</span>
+        <p style="font-size: 0.95rem;">
+          Built from the reader’s memoir <em>“My Experience Stalking Moby-Dick and the White Whale’s Fury with Me”</em> alongside the critical essays <em>“Melville-long”</em> and <em>“Melville.”</em>
+        </p>
+      </footer>
+
+    </main>
+  </div>
+
+  <api-shim></api-shim>
+  <script>
+    const readingStages = [
+      {
+        ageLabel: `Age ~19 · First-Year Undergraduate`,
+        title: `Four Days at the Library Desk`,
+        medium: `Print library tome`,
+        duration: `Parts of 4 days`,
+        tags: [`Nautical Confusion`, `Library Restlessness`],
+        summary: `Bogged down by directional terms like “aback,” “abeam,” “afoul,” and “abaft” until stepping into a bathtub felt uncertain. High school prep with Silas Marner, The Scarlet Letter, and Lord of the Flies offered no shield against Chapter 32’s Cetology or Chapter 80’s whale-skull phrenology.`,
+        anecdote: `Staring out the library window at a friend talking to a girl, I felt myself aging rapidly—beer had to be drunk. When I complained to my literature professor, he lit a Camel Turkish Gold, looked straight at the faculty parking lot, and said, “College life is busy.”`,
+        momentum: 18,
+        insight: 22
+      },
+      {
+        ageLabel: `Thirties · Father & Young Professor`,
+        title: `Episodic Months & A Closet Folder`,
+        medium: `Thick, heavily annotated edition`,
+        duration: `Several months in gaps`,
+        tags: [`Annotated Edition`, `Personal Obligation`],
+        summary: `Now a full-grown man with a graduate degree, I felt I had something to prove—my own whale to harpoon. I read episodically in the margins between fatherhood and teaching, paying close attention and filling pages with notes.`,
+        anecdote: `Years later I found some of those notes stuffed into a closet folder and scarcely recognized them—my mother had always warned me about the consequences of my bad penmanship.`,
+        momentum: 62,
+        insight: 68
+      },
+      {
+        ageLabel: `Age 79 · Fullness of Time`,
+        title: `Twenty-Three Hours Through AirPods`,
+        medium: `23-hour unabridged recording`,
+        duration: `One continuous week`,
+        tags: [`Spoken Poetry`, `No Footnote Detours`],
+        summary: `I recommend this approach without reservation to anyone who reaches seventy-nine. You hear the poetry and soak in the details without straining after tweedy professors mumbling with non-rhotic pronunciation at chalkboards, or tumbling down dictionary and encyclopedia rabbit holes.`,
+        anecdote: `Long, discursive sentences are also how you talk at seventy-nine, right? All you need to do is stay awake while it is read to you—at this age, all you have is the fullness of time and a rewind button.`,
+        momentum: 96,
+        insight: 98
+      }
+    ];
+
+    const lexiconItems = [
+      {
+        category: `nautical`,
+        categoryLabel: `Ship Geometry`,
+        term: `Aback, Abeam, Afoul, Abaft`,
+        detail: `Directional ship-layout vocabulary that disoriented a first-year undergraduate so thoroughly he lost the confidence to step into a bathtub.`
+      },
+      {
+        category: `butchering`,
+        categoryLabel: `Whale Butchering`,
+        term: `Gurry`,
+        detail: `The guts and visceral trimmings left behind during the heavy labor of cutting in and stripping a whale at sea.`
+      },
+      {
+        category: `butchering`,
+        categoryLabel: `Whale Butchering`,
+        term: `Slobgollion`,
+        detail: `An oozy, stringy substance wrung from the brains of Sperm Whales—proof that Melville spares the reader no ounce of blubber or brine.`
+      },
+      {
+        category: `chapters`,
+        categoryLabel: `Ch. 32 · Cetology`,
+        term: `Zoological Classification`,
+        detail: `An entire chapter halting the narrative to sort whales into folios, octavos, and duodecimos like books in a library.`
+      },
+      {
+        category: `chapters`,
+        categoryLabel: `Ch. 74 & 75 · Anatomy`,
+        term: `Sperm vs. Baleen Heads`,
+        detail: `Two consecutive chapters contrasting the physical skull structures of the Sperm Whale and the Baleen Whale across 135+ chapters.`
+      },
+      {
+        category: `chapters`,
+        categoryLabel: `Ch. 80 · The Nut`,
+        term: `Leviathan Phrenology`,
+        detail: `Melville insists that “phrenologically the head of this Leviathan, in the creature’s living intact state, is an entire delusion.”`
+      },
+      {
+        category: `chapters`,
+        categoryLabel: `Plot Eddies`,
+        term: `Skid-Row Sailor Lore`,
+        detail: `Long passages on the sacred lore of knot-tying, scurvy, owning a good pair of boots, scrimshawing, and symptoms of gonorrhea.`
+      },
+      {
+        category: `chapters`,
+        categoryLabel: `Teen Prep`,
+        term: `High-School Symbol Hunting`,
+        detail: `Being drilled on Silas Marner, The Scarlet Letter, and Lord of the Flies to “extract themes” and “name symbols” before the lunch bell.`
+      }
+    ];
+
+    const passages = [
+      {
+        label: `Opening Chapter · Ishmael’s Reason for Sailing`,
+        melville: `“I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation.”`,
+        reader: `Undergraduate verdict: Ishmael used far too many words simply to say he needed a vacation.`
+      },
+      {
+        label: `Chapter 80 · Sperm Whale Skull Anatomy`,
+        melville: `“Phrenologically the head of this Leviathan, in the creature’s living intact state, is an entire delusion.”`,
+        reader: `Student reaction: Salt-stained minutiae stacked atop 135 chapters when you only wanted to know if Ahab ever finds the whale.`
+      },
+      {
+        label: `The Clock · Search Engine vs. Lived Experience`,
+        melville: `Google Search estimate: “15 to 20 hours,” or “about 2 to 3 weeks, if you read an hour a day.”`,
+        reader: `Reader’s verdict: A clear lie and a fat chance. The audiobook alone runs 23 hours—and the full chase spanned decades.`
+      }
+    ];
+
+    const ropeBeats = [
+      {
+        tag: `Literal Survival · Mutual Hostage-Taking`,
+        stance: `Peril & Vulnerability`,
+        title: `1. The Monkey-Rope`,
+        body: `Ishmael is literally tethered at the waist to Queequeg, a harpooneer from the South Seas leaning over the ship’s side to strike a whale. If Queequeg slips, Ishmael is dragged under; if Ishmael loses his footing, both drown. There is no romance here—it is sweaty, anxious, and utterly involuntary.`,
+        quote: `Ishmael reflects with horror that his “life was now a part of the pebbled pavement of Queequeg’s own soul.”`,
+        mode: `tether`
+      },
+      {
+        tag: `Shipboard Society · Shared Fate`,
+        stance: `Fatal Interdependence`,
+        title: `2. The Pequod as a “Democratic” Hell`,
+        body: `Men of every race, creed, and temperament share food, water, labor, and a cramped forecastle. Yet because the entire crew depends on Captain Ahab—with his ivory leg and monomaniacal thirst—for wages and direction, one deranged spider drags the whole web to the bottom of the Pacific.`,
+        quote: `Interdependence does not guarantee care: a group can drown together even when no individual wishes to perish.`,
+        mode: `ahab`
+      },
+      {
+        tag: `Unexpected Grace · Instinctive Leap`,
+        stance: `Lifeline Over Noose`,
+        title: `3. Queequeg’s Rescue of the Greenhand`,
+        body: `Early in the voyage, a greenhand falls overboard, and Queequeg dives after him without a second thought. He does not calculate the risk or weigh moral philosophy. Our well-being is sometimes saved not by laws or contracts, but by the chaotic generosity of a stranger who owes us nothing.`,
+        quote: `Queequeg acts from a raw, instinctive fellow-feeling Melville can only call “the mystical vibration” of common humanity.`,
+        mode: `grace`
+      },
+      {
+        tag: `The Final Wreck · Possibility Without Promise`,
+        stance: `Tragedy & Miracle`,
+        title: `4. Floating on Queequeg’s Coffin`,
+        body: `The Pequod sinks and the vortex swallows every sailor except Ishmael, who floats to safety on Queequeg’s empty, tribal-carved coffin. Dependence kept Ishmael alive through an earlier bond, yet everyone else perished. Without dependence, we are “isolatoes” in an indifferent void.`,
+        quote: `“The tragedy and the miracle are the same: we cannot live alone, and we cannot fully trust those we live with.”`,
+        mode: `coffin`
+      }
+    ];
+
+    let appState = {
+      activeStage: 0,
+      lexiconFilter: `all`,
+      activePassage: 0,
+      activeRopeBeat: 0,
+      selectedStageInput: `Finished the voyage, still haunted by it`,
+      selectedVerdictInput: `Both tragedy and miracle at once`,
+      notes: []
+    };
+
+    function scrollToSection(id) {
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: `smooth`, block: `start` });
+      }
+    }
+
+    function renderStage(index) {
+      const stage = readingStages[index];
+      if (!stage) return;
+
+      for (let i = 0; i < readingStages.length; i++) {
+        const btn = document.getElementById(`stage-btn-` + i);
+        if (btn) {
+          btn.setAttribute(`aria-pressed`, i === index ? `true` : `false`);
+        }
+      }
+
+      const container = document.getElementById(`stage-detail-content`);
+      if (container) {
+        const tagsHtml = stage.tags.map(function(t) {
+          return `<span class="tag">${t}</span>`;
+        }).join(` `);
+
+        container.innerHTML = `
+          <div class="stage-meta-row">
+            <span class="label-voice">${stage.ageLabel}</span>
+            ${tagsHtml}
+          </div>
+          <h3>${stage.title}</h3>
+          <p>${stage.summary}</p>
+          <p style="font-style: italic; color: var(--on-surface-variant);">${stage.anecdote}</p>
+          <div class="stage-facts">
+            <div class="stage-fact-row">
+              <span class="label-voice label-muted">Format</span>
+              <span>${stage.medium}</span>
+            </div>
+            <div class="stage-fact-row">
+              <span class="label-voice label-muted">Time Spent</span>
+              <span>${stage.duration}</span>
+            </div>
+          </div>
+        `;
+      }
+
+      const svg = document.getElementById(`stage-svg`);
+      if (svg) {
+        const ptsMomentum = readingStages.map(function(s, i) {
+          const x = 68 + i * 142;
+          const y = 180 - (s.momentum / 100) * 125;
+          return { x: x, y: y, val: s.momentum, label: [`Age 19`, `Thirties`, `Age 79`][i] };
+        });
+
+        const pathD = `M ${ptsMomentum[0].x} ${ptsMomentum[0].y} L ${ptsMomentum[1].x} ${ptsMomentum[1].y} L ${ptsMomentum[2].x} ${ptsMomentum[2].y}`;
+
+        const gridLines = [25, 50, 75, 100].map(function(pct) {
+          const y = 180 - (pct / 100) * 125;
+          return `<line x1="48" y1="${y}" x2="390" y2="${y}" stroke="var(--outline-variant)" stroke-width="1" stroke-dasharray="3 3" />`;
+        }).join(``);
+
+        const nodesHtml = ptsMomentum.map(function(p, i) {
+          const isCurrent = i === index;
+          const r = isCurrent ? 7 : 4.5;
+          const fill = isCurrent ? `var(--data-1)` : `var(--data-2)`;
+          const ring = isCurrent ? `<circle cx="${p.x}" cy="${p.y}" r="12" fill="none" stroke="var(--outline)" stroke-width="1" />` : ``;
+          return `
+            ${ring}
+            <circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${fill}" />
+            <text x="${p.x}" y="206" text-anchor="middle" fill="var(--on-surface)" font-family="var(--font-label)" font-size="11" font-weight="600" letter-spacing="1.4">${p.label.toUpperCase()}</text>
+            <text x="${p.x}" y="${p.y - 16}" text-anchor="middle" fill="${isCurrent ? 'var(--primary)' : 'var(--on-surface-variant)'}" font-family="var(--font-body)" font-style="italic" font-size="13">${p.val}% immersed</text>
+          `;
+        }).join(``);
+
+        svg.innerHTML = `
+          ${gridLines}
+          <line x1="48" y1="180" x2="390" y2="180" stroke="var(--outline)" stroke-width="1" />
+          <path d="${pathD}" fill="none" stroke="var(--data-1)" stroke-width="2" stroke-linecap="square" />
+          ${nodesHtml}
+        `;
+      }
+    }
+
+    function selectStage(index) {
+      appState.activeStage = index;
+      renderStage(index);
+      persistState();
+    }
+
+    function renderLexicon(filter) {
+      const keys = [`all`, `nautical`, `butchering`, `chapters`];
+      for (let i = 0; i < keys.length; i++) {
+        const k = keys[i];
+        const btn = document.getElementById(`lex-btn-` + k);
+        if (btn) {
+          btn.setAttribute(`aria-pressed`, k === filter ? `true` : `false`);
+        }
+      }
+
+      const grid = document.getElementById(`lexicon-grid`);
+      if (!grid) return;
+
+      const filtered = filter === `all`
+        ? lexiconItems
+        : lexiconItems.filter(function(item) { return item.category === filter; });
+
+      grid.innerHTML = filtered.map(function(item) {
+        return `
+          <article class="lexicon-entry">
+            <span class="label-voice label-muted">${item.categoryLabel}</span>
+            <div class="lexicon-term">${item.term}</div>
+            <p style="font-size: 1rem;">${item.detail}</p>
+          </article>
+        `;
+      }).join(``);
+    }
+
+    function filterLexicon(category) {
+      appState.lexiconFilter = category;
+      renderLexicon(category);
+      persistState();
+    }
+
+    function renderPassage(index) {
+      const p = passages[index];
+      if (!p) return;
+
+      for (let i = 0; i < passages.length; i++) {
+        const btn = document.getElementById(`trans-btn-` + i);
+        if (btn) {
+          btn.setAttribute(`aria-pressed`, i === index ? `true` : `false`);
+        }
+      }
+
+      const grid = document.getElementById(`translator-grid`);
+      if (!grid) return;
+
+      grid.innerHTML = `
+        <div class="translator-col">
+          <span class="label-voice">What’s On the Page</span>
+          <p style="font-style: italic; color: var(--secondary); font-size: 1.15rem;">${p.melville}</p>
+        </div>
+        <div class="translator-col">
+          <span class="label-voice label-muted">What the Reader Experienced</span>
+          <p>${p.reader}</p>
+        </div>
+      `;
+    }
+
+    function selectPassage(index) {
+      appState.activePassage = index;
+      renderPassage(index);
+      persistState();
+    }
+
+    function renderRopeBeat(index) {
+      const beat = ropeBeats[index];
+      if (!beat) return;
+
+      for (let i = 0; i < ropeBeats.length; i++) {
+        const btn = document.getElementById(`rope-btn-` + i);
+        if (btn) {
+          btn.setAttribute(`aria-pressed`, i === index ? `true` : `false`);
+        }
+      }
+
+      const narrative = document.getElementById(`rope-narrative`);
+      if (narrative) {
+        const tagClass = beat.mode === `grace` ? `tag` : `tag tag-oxblood`;
+        narrative.innerHTML = `
+          <div class="stage-meta-row">
+            <span class="label-voice">${beat.tag}</span>
+            <span class="${tagClass}">${beat.stance}</span>
+          </div>
+          <h3>${beat.title}</h3>
+          <p>${beat.body}</p>
+          <blockquote class="verse">${beat.quote}</blockquote>
+        `;
+      }
+
+      const svg = document.getElementById(`rope-svg`);
+      if (!svg) return;
+
+      let diagram = ``;
+      if (beat.mode === `tether`) {
+        diagram = `
+          <line x1="30" y1="220" x2="390" y2="220" stroke="var(--data-context)" stroke-width="1.5" stroke-dasharray="4 4" />
+          <path d="M 40 165 L 250 165 L 270 190 L 40 190 Z" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1" />
+          <circle cx="130" cy="115" r="16" fill="none" stroke="var(--data-2)" stroke-width="2" />
+          <line x1="130" y1="131" x2="130" y2="165" stroke="var(--data-2)" stroke-width="2" />
+          <text x="130" y="88" text-anchor="middle" fill="var(--secondary)" font-family="var(--font-label)" font-size="11" font-weight="600" letter-spacing="1.4">ISHMAEL</text>
+          <circle cx="295" cy="135" r="16" fill="none" stroke="var(--data-1)" stroke-width="2" />
+          <line x1="295" y1="151" x2="282" y2="195" stroke="var(--data-1)" stroke-width="2" />
+          <text x="295" y="108" text-anchor="middle" fill="var(--primary)" font-family="var(--font-label)" font-size="11" font-weight="600" letter-spacing="1.4">QUEEQUEG</text>
+          <path d="M 130 148 Q 210 185 290 165" fill="none" stroke="var(--data-1)" stroke-width="2.5" />
+          <text x="210" y="205" text-anchor="middle" fill="var(--primary)" font-family="var(--font-body)" font-style="italic" font-size="13">The Monkey-Rope: mutual hostage-taking</text>
+        `;
+      } else if (beat.mode === `ahab`) {
+        diagram = `
+          <circle cx="210" cy="70" r="22" fill="var(--primary-container)" stroke="var(--data-1)" stroke-width="2" />
+          <text x="210" y="74" text-anchor="middle" fill="var(--primary)" font-family="var(--font-label)" font-size="11" font-weight="600" letter-spacing="1.4">AHAB</text>
+          <line x1="210" y1="92" x2="90" y2="175" stroke="var(--data-1)" stroke-width="1.75" />
+          <line x1="210" y1="92" x2="170" y2="175" stroke="var(--data-1)" stroke-width="1.75" />
+          <line x1="210" y1="92" x2="250" y2="175" stroke="var(--data-1)" stroke-width="1.75" />
+          <line x1="210" y1="92" x2="330" y2="175" stroke="var(--data-1)" stroke-width="1.75" />
+          <circle cx="90" cy="188" r="12" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5" />
+          <circle cx="170" cy="188" r="12" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5" />
+          <circle cx="250" cy="188" r="12" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5" />
+          <circle cx="330" cy="188" r="12" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5" />
+          <line x1="75" y1="215" x2="345" y2="215" stroke="var(--outline-variant)" stroke-width="1" />
+          <text x="210" y="238" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-body)" font-style="italic" font-size="13">The Pequod’s crew: one deranged spider pulls the entire web</text>
+        `;
+      } else if (beat.mode === `grace`) {
+        diagram = `
+          <path d="M 35 190 Q 120 175 210 190 T 385 190" fill="none" stroke="var(--data-4)" stroke-width="1.75" />
+          <circle cx="155" cy="186" r="14" fill="var(--surface-container)" stroke="var(--data-4)" stroke-width="2" />
+          <text x="155" y="222" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-label)" font-size="10.5" font-weight="600" letter-spacing="1.2">GREENHAND</text>
+          <path d="M 275 88 Q 225 90 178 172" fill="none" stroke="var(--data-2)" stroke-width="2.2" stroke-dasharray="4 3" />
+          <circle cx="275" cy="88" r="16" fill="var(--surface-container-low)" stroke="var(--data-2)" stroke-width="2" />
+          <text x="275" y="62" text-anchor="middle" fill="var(--secondary)" font-family="var(--font-label)" font-size="11" font-weight="600" letter-spacing="1.4">QUEEQUEG LEAPS</text>
+          <text x="210" y="248" text-anchor="middle" fill="var(--secondary)" font-family="var(--font-body)" font-style="italic" font-size="13">“The mystical vibration” turns a tangle into a lifeline</text>
+        `;
+      } else {
+        diagram = `
+          <circle cx="210" cy="145" r="78" fill="none" stroke="var(--data-context)" stroke-width="1" stroke-dasharray="3 4" />
+          <circle cx="210" cy="145" r="50" fill="none" stroke="var(--outline-variant)" stroke-width="1" stroke-dasharray="3 3" />
+          <rect x="165" y="128" width="90" height="28" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5" />
+          <circle cx="210" cy="112" r="12" fill="var(--primary-container)" stroke="var(--data-1)" stroke-width="2" />
+          <text x="210" y="90" text-anchor="middle" fill="var(--primary)" font-family="var(--font-label)" font-size="11" font-weight="600" letter-spacing="1.4">ISHMAEL SURVIVES</text>
+          <text x="210" y="146" text-anchor="middle" fill="var(--on-surface)" font-family="var(--font-body)" font-style="italic" font-size="11.5">Queequeg’s Coffin</text>
+          <text x="210" y="248" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-body)" font-style="italic" font-size="13">Dependence offers only the possibility of salvation, never the promise</text>
+        `;
+      }
+
+      svg.innerHTML = diagram;
+    }
+
+    function selectRopeBeat(index) {
+      appState.activeRopeBeat = index;
+      renderRopeBeat(index);
+      persistState();
+    }
+
+    function renderNotes() {
+      const container = document.getElementById(`saved-entries-container`);
+      if (!container) return;
+
+      const stageEl = document.getElementById(`input-stage`);
+      const verdictEl = document.getElementById(`input-verdict`);
+      if (stageEl && appState.selectedStageInput) stageEl.value = appState.selectedStageInput;
+      if (verdictEl && appState.selectedVerdictInput) verdictEl.value = appState.selectedVerdictInput;
+
+      if (!appState.notes || appState.notes.length === 0) {
+        container.innerHTML = `
+          <p class="empty-state">
+            No margin notes inscribed yet. Select your stage above and jot down a brief reflection—just like the closet folder of handwritten notes from the thirties.
+          </p>
+        `;
+        return;
+      }
+
+      container.innerHTML = appState.notes.map(function(entry, idx) {
+        return `
+          <article class="saved-entry">
+            <div class="saved-entry-head">
+              <span class="label-voice">${entry.stage}</span>
+              <span class="tag">${entry.verdict}</span>
+            </div>
+            <p style="font-size: 1.05rem;">${escapeHtml(entry.text)}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.85rem; font-style: italic; color: var(--on-surface-variant);">${entry.date}</span>
+              <button type="button" class="nav-link" style="min-height: 44px;" onclick="removeMarginNote(${idx})">Remove</button>
+            </div>
+          </article>
+        `;
+      }).join(``);
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, `&amp;`)
+        .replace(/</g, `&lt;`)
+        .replace(/>/g, `&gt;`)
+        .replace(/"/g, `&quot;`)
+        .replace(/'/g, `&#39;`);
+    }
+
+    function saveMarginNote(event) {
+      if (event) event.preventDefault();
+      const stageEl = document.getElementById(`input-stage`);
+      const verdictEl = document.getElementById(`input-verdict`);
+      const noteEl = document.getElementById(`input-note`);
+      const statusEl = document.getElementById(`form-status`);
+
+      if (!stageEl || !verdictEl || !noteEl) return;
+
+      const text = noteEl.value.trim();
+      if (!text) {
+        if (statusEl) {
+          statusEl.textContent = `Please write a brief margin note before inscribing it.`;
+          statusEl.classList.add(`is-error`);
+        }
+        noteEl.focus();
+        return;
+      }
+
+      appState.selectedStageInput = stageEl.value;
+      appState.selectedVerdictInput = verdictEl.value;
+
+      const now = new Date();
+      const dateStr = now.toLocaleDateString(`en-US`, { year: `numeric`, month: `short`, day: `numeric` });
+
+      appState.notes.unshift({
+        stage: stageEl.value,
+        verdict: verdictEl.value,
+        text: text,
+        date: dateStr
+      });
+
+      noteEl.value = ``;
+      if (statusEl) {
+        statusEl.textContent = `Margin note inscribed into your ledger.`;
+        statusEl.classList.remove(`is-error`);
+      }
+
+      renderNotes();
+      persistState();
+    }
+
+    function removeMarginNote(index) {
+      appState.notes.splice(index, 1);
+      const statusEl = document.getElementById(`form-status`);
+      if (statusEl) {
+        statusEl.textContent = `Entry removed from ledger.`;
+        statusEl.classList.remove(`is-error`);
+      }
+      renderNotes();
+      persistState();
+    }
+
+    function resetMarginNotes(btn) {
+      if (!btn) return;
+      if (btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.textContent = `Click again to clear`;
+        return;
+      }
+      btn.dataset.armed = `false`;
+      btn.textContent = `Clear Ledger`;
+      appState.notes = [];
+      const statusEl = document.getElementById(`form-status`);
+      if (statusEl) {
+        statusEl.textContent = `Ledger cleared.`;
+        statusEl.classList.remove(`is-error`);
+      }
+      renderNotes();
+      persistState();
+    }
+
+    async function persistState() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+          await window.notebookAppApi.setAppState(appState);
+        }
+      } catch (err) {
+        // Silent fallback if outside host environment
+      }
+    }
+
+    function setupScrollReveals() {
+      const els = document.querySelectorAll(`.reveal`);
+      if (!(`IntersectionObserver` in window)) return;
+      els.forEach(function(el) { el.classList.add(`is-pending`); });
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove(`is-pending`);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function(el) { observer.observe(el); });
+    }
+
+    async function initApp() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+          const saved = await window.notebookAppApi.getAppState();
+          if (saved && typeof saved === `object`) {
+            appState = Object.assign({}, appState, saved);
+          }
+        }
+      } catch (err) {
+        // Proceed with defaults
+      }
+
+      renderStage(typeof appState.activeStage === `number` ? appState.activeStage : 0);
+      renderLexicon(appState.lexiconFilter || `all`);
+      renderPassage(typeof appState.activePassage === `number` ? appState.activePassage : 0);
+      renderRopeBeat(typeof appState.activeRopeBeat === `number` ? appState.activeRopeBeat : 0);
+      renderNotes();
+      setupScrollReveals();
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+        window.notebookAppApi.notifyAppReady();
+      }
+    }
+
+    initApp();
+  </script>
+</body>
+</html>
